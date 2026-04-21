@@ -1,0 +1,7 @@
+{
+    "generated_at": "2026-04-21 17:25:01.975788",
+    "sns_topic": "sadhvi-alerts",
+    "alarm": "sadhvi-high-cpu-alarm",
+    "threshold": "80% CPU",
+    "email": "sadhvisharma0705@gmail.com"
+}
