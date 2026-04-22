@@ -9,7 +9,7 @@ from datetime import datetime
 
 REGION = 'ca-central-1'
 SNS_TOPIC_NAME = 'sadhvi-alerts'
-EMAIL = 'sadhvisharma0705@gmail.com'  #  email
+EMAIL = 'your-email@gmail.com'  #  email
 
 def create_sns_topic():
     sns = boto3.client('sns', region_name=REGION)
