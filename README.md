@@ -178,3 +178,7 @@ Nokia India (5G Packet Core) → Cloud & AI Engineering
 Calgary, AB, Canada | Permanent Resident | Open to Relocation
 
 [LinkedIn](https://linkedin.com/in/sadhvi-sharma-5789a6249) | [GitHub](https://github.com/sadvi11)
+
+## Canadian Compliance Note
+All resources deploy to ca-central-1 by default.
+Supports PIPEDA data residency requirements for Canadian workloads.
