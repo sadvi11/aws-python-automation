@@ -160,7 +160,7 @@ aws-python-automation/
 
 ---
 
-## Interview Talking Points
+## Design Decisions
 
 - **Boto3 vs AWS CLI** — when to use each, why Python automation beats manual console work
 - **IAM least privilege** — what permissions each module needs and why
