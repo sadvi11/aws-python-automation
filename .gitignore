@@ -1,2 +1,18 @@
-*.json
-*.txt
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Credentials — never commit
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+*sdk-auth*.json
+
+# Local run output written by these scripts
+ec2_report.json
+cloudwatch_report.json

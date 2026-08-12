@@ -110,4 +110,5 @@ def run():
     
     print("\nLambda setup complete!")
 
-run()
+if __name__ == "__main__":
+    run()

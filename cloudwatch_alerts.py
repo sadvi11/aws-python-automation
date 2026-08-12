@@ -86,4 +86,5 @@ def run():
     print("\nReport saved to cloudwatch_report.json")
     print("CloudWatch setup complete!")
 
-run()
+if __name__ == "__main__":
+    run()

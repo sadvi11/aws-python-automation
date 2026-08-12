@@ -61,4 +61,5 @@ def check_and_control():
     
     print("\nReport saved to ec2_report.json")
 
-check_and_control()
+if __name__ == "__main__":
+    check_and_control()

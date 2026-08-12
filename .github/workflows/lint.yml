@@ -1,0 +1,49 @@
+name: Lint
+
+# These scripts call AWS, so they cannot be exercised in CI without an account.
+# What can be checked for free is that every module imports and compiles --
+# which catches the failure mode that actually bites a reader: cloning the repo,
+# running a script, and hitting a NameError or a bad import before any AWS call
+# is made.
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+permissions:
+  contents: read
+
+env:
+  AWS_DEFAULT_REGION: us-east-1
+
+jobs:
+  lint:
+    name: Compile and import
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install -r requirements.txt ruff
+
+      - name: Every file compiles
+        run: |
+          find . -name '*.py' -print0 | xargs -0 -n1 python -m py_compile
+          echo "all Python files compile"
+
+      - name: Every module imports
+        # boto3 clients are constructed lazily and make no call at import time,
+        # so this needs a region but no credentials.
+        run: |
+          for f in *.py; do
+            m="${f%.py}"
+            python -c "import importlib; importlib.import_module('$m')" \
+              || { echo "::error::$f failed to import"; exit 1; }
+            echo "  ok: $f"
+          done
+
+      - name: Ruff
+        run: ruff check . --select E9,F63,F7,F82
