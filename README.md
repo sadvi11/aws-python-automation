@@ -1,5 +1,7 @@
 # AWS Python Automation Suite
 
+[![Lint](https://github.com/sadvi11/aws-python-automation/actions/workflows/lint.yml/badge.svg)](https://github.com/sadvi11/aws-python-automation/actions/workflows/lint.yml)
+
 > Production-grade AWS operations automation using Python and Boto3 — EC2 control, S3 management, Lambda scheduling, CloudWatch monitoring, and SNS alerting.
 
 [![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python)](https://python.org)
